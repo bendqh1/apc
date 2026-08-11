@@ -1,3 +1,8 @@
 Anti Procrastination by Context (APC).
 
 A PowerShell program which helps fight procrastination.
+
+## Notes
+
+* Choose an option by typing its number and then hit <kbd>Enter</kbd>
+* If Ctrl+C doesn't stop the script, the speech synthesizer may be blocking the PowerShell process while `Speak()` is running.
