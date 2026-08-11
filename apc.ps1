@@ -42,3 +42,6 @@ while ((Get-Date) -lt $endTime) {
 
 # Releases the speech synthesizer and its resources.
 $synth.Dispose()
+
+# In case the script runs in a kept-alive window, print a message indicating it's cessation
+Write-Host "End of transmission"
