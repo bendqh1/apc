@@ -1,5 +1,5 @@
 # Gets all .txt files located in the same folder as this script.
-$files = Get-ChildItem "$PSScriptRoot\*.txt"
+$files = Get-ChildItem "$PSScriptRoot\sentences\*.txt"
 
 # Loops through each text file and keeps track of its index.
 for ($i = 0; $i -lt $files.Count; $i++) {
