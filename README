@@ -2,6 +2,8 @@ Anti Procrastination by Context (APC).
 
 A PowerShell program which helps fight procrastination.
 
+Cloned from the cloud each time anew, [as with Git](https://github.com/bendqh1/windows/blob/main/powershell/git.md).
+
 ## Notes
 
 * Choose an option by typing its number and then hit <kbd>Enter</kbd>
