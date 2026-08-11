@@ -23,7 +23,7 @@ $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
 $synth.SelectVoice("Microsoft David Desktop")
 
 # Sets the speech rate to 4 levels slower than the default.
-$synth.Rate = -4
+$synth.Rate = -2
 
 # Sets the time when the speech loop should stop, 60 minutes from now.
 $endTime = (Get-Date).AddMinutes(60)
@@ -36,7 +36,7 @@ while ((Get-Date) -lt $endTime) {
     # Speaks the randomly selected sentence aloud.
     $synth.Speak($message)
 
-    # Waits 240 seconds (4 minutes) before speaking again.
+    # Waits 120 seconds before speaking again.
     Start-Sleep -Seconds 240
 }
 
