@@ -2,8 +2,9 @@
 # Settings
 # =========================
 
-$sessionMinutes = 1 # 5
-$pauseSeconds = 0 # 5
+$sessionMinutes = 1
+$pauseSeconds = 10
+# $pauseSeconds = Get-Random -Minimum 5 -Maximum 11 # It's 11 instead of 10 because of exclusiveness
 
 # =========================
 # Choose sentence list
