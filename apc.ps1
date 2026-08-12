@@ -2,8 +2,8 @@
 # Settings
 # =========================
 
-$timeoutSeconds = 60
-$pauseSeconds = 5
+$sessionMinutes = 1
+$pauseSeconds = 0
 
 # =========================
 # Choose sentence list
@@ -45,7 +45,7 @@ $synth.Rate = -2
 # Speak until timeout
 # =========================
 
-$endTime = (Get-Date).AddSeconds($timeoutSeconds)
+$endTime = (Get-Date).AddMinutes($sessionMinutes)
 
 while ((Get-Date) -lt $endTime) {
 
@@ -54,7 +54,7 @@ while ((Get-Date) -lt $endTime) {
     # Speak the sentence completely.
     $synth.Speak($message)
 
-    # Wait 5 seconds after speaking finishes.
+    # Wait between sentences.
     if ((Get-Date) -lt $endTime) {
         Start-Sleep -Seconds $pauseSeconds
     }
