@@ -49,8 +49,8 @@ while ((Get-Date) -lt $endTime) {
     # Speaks the randomly selected sentence aloud.
     $synth.Speak($message)
 
-    # Waits 120 seconds before speaking again.
-    Start-Sleep -Seconds 240
+    # Waits N seconds before speaking again.
+    Start-Sleep -Seconds 30
 }
 
 # Releases the speech synthesizer and its resources.
