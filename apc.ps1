@@ -19,8 +19,21 @@ Add-Type -AssemblyName System.Speech
 # Creates a new text-to-speech synthesizer.
 $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
 
-# Selects the Microsoft David Desktop voice.
-$synth.SelectVoice("Microsoft David Desktop")
+# Gets all voices installed on this Windows system.
+$voices = @($synth.GetInstalledVoices() | ForEach-Object {
+    $_.VoiceInfo
+})
+
+# Displays the available voices.
+for ($i = 0; $i -lt $voices.Count; $i++) {
+    Write-Host "$($i + 1). $($voices[$i].Name) [$($voices[$i].Culture)]"
+}
+
+# Asks the user to choose a voice.
+$voiceChoice = Read-Host "Choose voice"
+
+# Selects the chosen voice.
+$synth.SelectVoice($voices[[int]$voiceChoice - 1].Name)
 
 # Sets the speech rate to 4 levels slower than the default.
 $synth.Rate = -2
