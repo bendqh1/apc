@@ -63,4 +63,4 @@ while ((Get-Date) -lt $endTime) {
 $synth.Dispose()
 
 Write-Host ""
-Write-Host "Script finished."# Gets all .txt files.
+Write-Host "Script finished."
