@@ -1,10 +1,3 @@
-trap {
-    Write-Host ""
-    Write-Host "Script interrupted."
-    Read-Host "Press Enter to close"
-    exit
-}
-
 # Gets all .txt files.
 $files = Get-ChildItem "$PSScriptRoot\sentences\*.txt"
 
