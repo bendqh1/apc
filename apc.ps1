@@ -2,8 +2,8 @@
 # Settings
 # =========================
 
-$sessionMinutes = 1
-$pauseSeconds = 0
+$sessionMinutes = 1 # 5
+$pauseSeconds = 0 # 5
 
 # =========================
 # Choose sentence list
