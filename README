@@ -8,3 +8,7 @@ Cloned from the cloud each time anew, [as with Git](https://github.com/bendqh1/w
 
 * Choose an option by typing its number and then hit <kbd>Enter</kbd>
 * If Ctrl+C doesn't stop the script, the speech synthesizer may be blocking the PowerShell process while `Speak()` is running.
+
+### Launcher notes
+
+* `--depth 1` makes it a shallow clone, so Git downloads only the current state rather than the repository's entire history.
