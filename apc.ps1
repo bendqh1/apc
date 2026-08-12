@@ -45,3 +45,13 @@ $synth.Dispose()
 
 # In case the script runs in a kept-alive window, print a message indicating it's cessation
 Write-Host "End of transmission"
+
+# Prevent the finalization of the script from closing the window AND prevent Ctrl+C from closing the window
+try {
+    Start-Reminder
+}
+finally {
+    Write-Host ""
+    Write-Host "Script finished or was interrupted."
+    Read-Host "Press Enter to close"
+}
