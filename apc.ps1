@@ -58,7 +58,7 @@ $synth.Dispose()
 
 # Prevent the finalization of the script from closing the window AND prevent Ctrl+C from closing the window
 try {
-    Start-Reminder
+    # Your main script goes here
 }
 finally {
     Write-Host ""
