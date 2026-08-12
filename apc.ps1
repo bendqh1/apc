@@ -35,11 +35,11 @@ $voiceChoice = Read-Host "Choose voice"
 # Selects the chosen voice.
 $synth.SelectVoice($voices[[int]$voiceChoice - 1].Name)
 
-# Sets the speech rate to 4 levels slower than the default.
+# Sets the speech rate to some level slower than the default (0).
 $synth.Rate = -2
 
 # Sets the time when the speech loop should stop.
-$endTime = (Get-Date).AddMinutes(4)
+$endTime = (Get-Date).AddMinutes(1)
 
 # Keeps running until the current time reaches the end time.
 while ((Get-Date) -lt $endTime) {
