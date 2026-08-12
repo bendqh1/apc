@@ -1,30 +1,17 @@
-# Remember where you started.
-$originalLocation = Get-Location
+# GitHub repository
+$repoUrl = "https://github.com/bendqh1/apc"
 
-# Create a unique temporary location for the repository.
-$tempRepoPath = "$env:TEMP\apc-$([guid]::NewGuid())"
+# Create a unique temporary folder
+$apc_temp_repo_path = Join-Path $env:TEMP "apc-$([guid]::NewGuid())"
 
 try {
-    # Clone the complete repository, including its subfolders.
-    git clone --depth 1 https://github.com/bendqh1/apc $tempRepoPath
+    # Download the repository
+    git clone --depth 1 $repoUrl $apc_temp_repo_path
 
-    # Show everything that was actually cloned.
-    Get-ChildItem $tempRepoPath -Recurse
-
-    # Find the main PowerShell script anywhere in the repository.
-    $script = Get-ChildItem $tempRepoPath -Recurse -Filter *.ps1 |
-        Select-Object -First 1
-
-    # Use the repository root as the working directory.
-    Push-Location $tempRepoPath
-
-    # Run the script while keeping the repository structure available.
-    & $script.FullName
+    # Run apc.ps1 from the downloaded repository
+    & (Join-Path $apc_temp_repo_path "apc.ps1")
 }
 finally {
-    # Return to the folder from which you started.
-    Set-Location $originalLocation
-
-    # Delete the temporary repository and all its subfolders.
-    # Remove-Item $tempRepoPath -Recurse -Force -ErrorAction SilentlyContinue
+    # Delete the downloaded repository
+    Remove-Item $apc_temp_repo_path -Recurse -Force -ErrorAction SilentlyContinue
 }
