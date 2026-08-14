@@ -2,8 +2,8 @@
 # Settings
 # =========================
 
-$sessionMinutes = 60
-$pauseSeconds = 10
+$sessionMinutes = 60 # 1 for testing
+$pauseSeconds = 30 # 10 for testing
 # $pauseSeconds = Get-Random -Minimum 5 -Maximum 11 # It's 11 instead of 10 because of exclusiveness
 
 # =========================
