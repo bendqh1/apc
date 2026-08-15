@@ -3,7 +3,7 @@
 # =========================
 
 $sessionMinutes = 60 # 1 for testing
-$pauseSeconds = 90 # 10 for testing
+$pauseSeconds = 120 # 10 for testing
 # $pauseSeconds = Get-Random -Minimum 5 -Maximum 11 # It's 11 instead of 10 because of exclusiveness
 
 # =========================
