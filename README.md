@@ -11,9 +11,9 @@ It will do a Temporary Download, Run, Delete (TDRD) operation for the script.
 
 ## Notes
 
-* Choose an option by typing its number and then hit <kbd>Enter</kbd>
+* Choose an option by typing its number and then hit <kbd>Enter</kbd>.
 * If <kbd>Ctrl</kbd>+<kbd>C</kbd> doesn't stop the script, the speech synthesizer may be blocking the PowerShell process while `Speak()` is running.
-* One caveat: if a sentence is still being spoken when the 60 seconds expires, `System.Speech.SpeechSynthesizer.Speak()` is synchronous, so the script will finish after that sentence finishes, rather than forcibly cutting it off.
+* The script runs by a timeout, but if a sentence is still being spoken when the timeout meets, `System.Speech.SpeechSynthesizer.Speak()`, then the script should end after that sentence finishes.
 
 ### Launcher notes
 
